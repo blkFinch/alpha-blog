@@ -1,23 +1,11 @@
 %h1.h1.text-primary Listing articles
+- @articles.each do |article|
+  .card.m-2
+    .card-body
+      %h4.card-title
+        =link_to article.title, article
+      .card-text
+        = article.description.truncate(100)
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Description
-      %th
-      %th
-      %th
-
-  %tbody
-    - @articles.each do |article|
-      %tr
-        %td= article.title
-        %td= article.description
-        %td= link_to 'Show', article
-        %td= link_to 'Edit', edit_article_path(article)
-        %td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
 
 = link_to 'New Article', new_article_path

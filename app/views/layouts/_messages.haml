@@ -1,0 +1,7 @@
+.container
+  .row.m-2
+    .col-10
+      - flash.each do |name, msg|
+        .alert{:class => (name == "success" ? "alert-success" : "") }
+          %a.float-right.btn.btn-sm{"data-dismiss":"alert"} x
+          = msg

@@ -8,6 +8,7 @@
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
           Blog
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          = link_to 'Latest', article_url(Article.last), class: 'dropdown-item'
           = link_to 'Articles', articles_url, class: 'dropdown-item'
           = link_to 'New Article', new_article_url, class: 'dropdown-item'
 
