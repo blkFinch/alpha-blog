@@ -2,4 +2,13 @@ $theme-colors:(
   "primary": plum
 );
 
+.center{
+  text-align: center;
+}
+
+.jumbotron{
+  background-image: asset-url('palm_img.jpeg');
+  height: 550px;
+}
+
 @import "bootstrap";
