@@ -17,4 +17,10 @@
     </div>
   </body>
   <%= render "layouts/footer"%>
+
+  <%-if Rails.env.development? %>
+    <div class="alert alert-info">
+      <%= debug(params)  %>
+    </div>
+  <% end %>
 </html>
