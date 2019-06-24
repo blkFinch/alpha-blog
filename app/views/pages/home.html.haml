@@ -1,4 +1,9 @@
-.jumbotron.center.mt-3
-  %h1.h1.text-light Blog Blog
+.jumbotron.mt-3
+  .row
+    .col.center
+      %h1.h1.text-light Blog Blog
+      = link_to 'Sign Up Now', signup_url, class: 'btn btn-primary btn-lg text-light'
 
-  = link_to 'Sign Up Now', signup_url, class: 'btn btn-primary btn-lg text-light'
+    .col.bg-light.rounded.p-3
+      %h1.h1.text-primary Login
+      = render 'sessions/login_form'

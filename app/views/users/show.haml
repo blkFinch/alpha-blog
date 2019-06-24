@@ -4,6 +4,10 @@
     = gravatar_for @user, size: 120
     .small.text-muted
       = @user.bio
+
+    - if @user == current_user
+      = link_to 'edit', edit_user_url(@user)
   .col-8
     %h4= "#{@user.username}'s Articles"
-    = render 'articles/articles', obj: @user.articles
+    = will_paginate @user_articles
+    = render 'articles/articles', obj: @user_articles

@@ -1,0 +1,11 @@
+= form_for :session, url: login_path do |f|
+  -# = render 'shared/errors', obj: @user
+
+  .form-group
+    = f.label :email, class: "form-label"
+    = f.email_field :email, class: "form-control"
+  .form-group
+    = f.label :password, class: "form-label"
+    = f.password_field :password, class: "form-control"
+  .actions
+    = f.submit 'Login', class: "btn btn-success"

@@ -1,6 +1,8 @@
 %h1.h1.text-primary Listing articles
 
-= render 'articles', obj: @articles
+= will_paginate
 
+= render 'articles', obj: @articles
+= will_paginate
 
 = link_to 'New Article', new_article_path
