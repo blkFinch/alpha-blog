@@ -1,19 +1,6 @@
 %h1.h1.text-primary Listing articles
-- @articles.each do |article|
-  .card.m-2
-    .card-body
-      .card-title
-        %h4
-          =link_to article.title, article
-      .card-text
-        = article.description.truncate(100)
 
-      -if article.user
-        .card-footer.text-muted.article-meta-footer
-          %small
-            = "Created By #{article.user.username}"
-            = time_ago_in_words(article.created_at)
-            ago
+= render 'articles', obj: @articles
 
 
 = link_to 'New Article', new_article_path

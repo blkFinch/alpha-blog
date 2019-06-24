@@ -1,0 +1,9 @@
+.row
+  .col-2
+    %h1.h1= @user.username
+    = gravatar_for @user, size: 120
+    .small.text-muted
+      = @user.bio
+  .col-8
+    %h4= "#{@user.username}'s Articles"
+    = render 'articles/articles', obj: @user.articles
