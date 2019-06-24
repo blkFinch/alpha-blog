@@ -2,3 +2,7 @@
 = @user.username
 
 = render 'form'
+
+- if current_user.admin?
+  .p-2
+    = link_to 'Delete?', user_path(@user), method: :delete, 'data-confirm':'Are you sure? This will destroy the user', class:'btn btn-sm btn-danger'

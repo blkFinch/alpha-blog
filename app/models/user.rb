@@ -11,7 +11,7 @@ class User < ApplicationRecord
             uniqueness: {case_sensitive: false},
             length: {maximum: 100 }, format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }
 
-  has_many :articles
+  has_many :articles, dependent: :destroy
 
   has_secure_password
 end

@@ -5,7 +5,7 @@
     .small.text-muted
       = @user.bio
 
-    - if @user == current_user
+    - if @user == current_user || current_user.admin?
       = link_to 'edit', edit_user_url(@user)
   .col-8
     %h4= "#{@user.username}'s Articles"
