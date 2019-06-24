@@ -2,10 +2,18 @@
 - @articles.each do |article|
   .card.m-2
     .card-body
-      %h4.card-title
-        =link_to article.title, article
+      .card-title
+        %h4
+          =link_to article.title, article
       .card-text
         = article.description.truncate(100)
+
+      -if article.user
+        .card-footer.text-muted.article-meta-footer
+          %small
+            = "Created By #{article.user.username}"
+            = time_ago_in_words(article.created_at)
+            ago
 
 
 = link_to 'New Article', new_article_path
