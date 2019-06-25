@@ -1,0 +1,8 @@
+.col.center
+  %h2.h2 Categories
+  = will_paginate
+  %ul.list-group
+    - @categories.each do |category|
+      %li.list-group-item.center
+        = link_to category.name, category_path(category)
+
