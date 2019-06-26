@@ -7,5 +7,11 @@
   .form-group
     = f.label :description, class: "form-label"
     = f.text_area :description, class: "form-control", rows: 10
+  .form-group
+    = f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb|
+      .form-check-inline
+        = cb.check_box class: "form-check-input"
+        = cb.label class: "form-check-label"
+
   .actions
     = f.submit 'Save', class: "btn btn-success"
